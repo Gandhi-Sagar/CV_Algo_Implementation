@@ -1,0 +1,6 @@
+#ifndef _IMAGE_FUNDAMENTALS
+#define _IMAGE_FUNDAMENTALS
+
+
+
+#endif
