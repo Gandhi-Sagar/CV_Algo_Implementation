@@ -1,4 +1,4 @@
-# Computer_Vision
+# Computer_Vision_Para_Lib
 
 Aim: Create GPGPU enabled Image Processing Library
 
