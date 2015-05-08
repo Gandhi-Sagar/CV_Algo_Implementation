@@ -7,11 +7,6 @@
 #include <fstream>
 #include <assert.h>
 
-#define IMG_DATA_U_CHAR 0
-#define IMG_DATA_U_INT 1
-#define IMG_DATA_FLOAT 2
-#define IMG_DATA_COMPLEX 4
-
 #pragma pack(push, 1)
 
 typedef struct 
@@ -40,6 +35,13 @@ typedef struct
 
 #pragma pack(pop)
 
+/*	It is expected that you read before you write.
+ *	If you make any changes to "image data" i.e. R, G, B channels, MAKE SURE you change the header accordingly
+ *	
+ *	e.g. If you convert the image to grayscale, change the following entries in the header:
+ *	BMP_INFO_HEADER - planes, bits_per_pixel, imagesize
+ *  BMP_FILE_HEADER - b_filesize (this = imagesize + headersize)
+ */
 
 class CImage
 {
@@ -58,7 +60,6 @@ private:
 			std::vector<unsigned char>		m_data_green;
 			std::vector<unsigned char>		m_data_blue;
 
-			unsigned short					m_type;
 			bool							m_bFileRead;
 
 			BITMAPFILEHEADER				*m_bmpHeader;		// store headers in case we need to write back to HDD
