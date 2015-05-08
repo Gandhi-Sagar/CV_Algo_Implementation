@@ -3,6 +3,5 @@
 Aim: Create GPGPU enabled Image Processing Library
 
 
-Status - Just starting out, able to read/write BMP file - BMP has 7 formats..!!
+Status - Just starting out, able to read/write BMP file - read header files for more info
 
-Next Step: Add more functionality
