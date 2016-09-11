@@ -6,7 +6,6 @@
 
 #include "ImgProc.h"
 
-typedef std::tuple<unsigned char, unsigned char, unsigned char> rgbTuple;
 enum type { _undefined, _rgb, _gray };
 class Image
 {
@@ -21,8 +20,9 @@ class Image
 
 	public:
 		Image();
+		Image(const Image&);
 		~Image();
-		
+
 		class RGB
 		{
 			private: 
@@ -33,7 +33,7 @@ class Image
 		class Gray
 		{
 			private:
-				std::vector<unsigned char> data;
+				std::vector<std::vector<unsigned char>> data;
 			friend class ImgProc;
 		}gray;
 		friend class ImgProc;

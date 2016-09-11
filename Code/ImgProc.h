@@ -8,6 +8,7 @@
 #include "BMPHeader.h"
 
 class Image;
+typedef std::tuple<unsigned char, unsigned char, unsigned char> rgbTuple;
 
 class ImgProc
 {
@@ -15,8 +16,10 @@ class ImgProc
 		ImgProc() {};
 		~ImgProc() {};
 
-		Image ReadBitmap(std::string filename);
-		bool WriteBitmap(Image& img, std::string filename);
+		Image		imread_bitmap(std::string filename);
+		bool		imwrite_bitmap(Image& img, std::string filename);
+		Image		rgb2gray(const Image& img);
+		rgbTuple	at(int row, int col, Image img);
 };
 
 
